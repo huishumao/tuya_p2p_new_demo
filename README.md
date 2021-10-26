@@ -127,7 +127,15 @@ interface P2pCallBack {
      */
     fun onShorturl(url: String?)
 
-    //接收到的图视频数据
+    /**
+    ** 接收到的图视频数据
+    ** @param sessionId p2p连接的会话Id
+    ** @param status 数据接受状态枚举值 @see{P2pJniApi.RecvStatus}
+    ** @param buf 图片数据
+    ** @param len数据长度，等同于buf.length()
+    ** @param downloadAlbumHead 传输相关信息
+    ** @param c2cCmdIoCtrlAlbumDownloadStart 图片相关
+    **/
     fun recvVideData(
             sessionId: Int,
             status: RecvStatus,
